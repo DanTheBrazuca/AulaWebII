@@ -5,10 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula Web II</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body{
+        background-color: rgb(50, 107, 107);
+        font-family: sans-serif;
+    }
+    form{
+        background-color: aliceblue;
+        width:max-content;
+        border: 2px solid #333333;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    #listaUsuarios {
+        background-color: aliceblue;
+        width: max-content;
+        min-width: 250px;
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        list-style-position: inside;
+        display: none; /* Começa escondida */
+    }
+</style>
 <body>
     <h1>Web II</h1>
-    <p>Olá mundo</p>
+    <p style="color: aliceblue;">Cadastro:</p>
+    <form id="meuFormulario">
+        <label>Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="ex:Fulano da Silva" required><br><br>
+        <label>E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="ex:abc123@gmail.com" required><br><br>
+        <label>Telefone:</label>
+        <input type="text" id="telefone" name="telefone" placeholder="(XX)XXXXX-XXXX" required><br><br>
+        
+        <input type="submit" value="Cadastrar">
+        <input type="button" value="Mostrar Cadastros" id="btnMostrar">
+    </form>
+    
+    <p style="color: aliceblue; margin-top: 30px;">Usuários Cadastrados:</p>
+    <ul id="listaUsuarios"></ul>
 </body>
+<script>
+    const usuarios = [];
+    const formulario = document.getElementById('meuFormulario');
+    const listaHtml = document.getElementById('listaUsuarios');
+    const btnMostrar = document.getElementById('btnMostrar');
+
+    formulario.addEventListener('submit', function(evento) {
+        evento.preventDefault();
+        
+        const nomeDigitado = document.getElementById('nome').value;
+        const emailDigitado = document.getElementById('email').value;
+        const telefoneDigitado = document.getElementById('telefone').value;
+
+        const novoUsuario = {
+            nome: nomeDigitado,
+            email: emailDigitado,
+            telefone: telefoneDigitado
+        };
+        usuarios.push(novoUsuario);
+        formulario.reset();
+        alert('Usuário cadastrado com sucesso!');
+    });
+
+    btnMostrar.addEventListener('click', function() {
+        desenharLista();
+    });
+
+    function desenharLista() {
+        listaHtml.innerHTML = ''; 
+        listaHtml.style.display = 'block'; 
+
+        if (usuarios.length === 0) {
+            listaHtml.innerHTML = 'Nenhum usuário cadastrado ainda.';
+            return;
+        }
+
+        usuarios.forEach(function(usuario) {
+            const itemLista = document.createElement('li');
+            itemLista.textContent = `${usuario.nome} | ${usuario.email} | ${usuario.telefone}`;
+            listaHtml.appendChild(itemLista);
+        });
+    }
+</script>
 </html>

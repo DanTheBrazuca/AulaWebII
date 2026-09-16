@@ -1,0 +1,19 @@
+index.html
+  h_2d3fee16c6ce59 1,4-6,24,32-33,36-47,49
+  h_2d3fee16c6ce59 3,8-12,14-19,21-22,26-31,35
+index.php
+  h_2d3fee16c6ce59 1-43
+Dockerfile
+  h_2d3fee16c6ce59 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "05349f7b969fff6e0980b81f7720e4a57636b4e5",
+  "prompts": {},
+  "humans": {
+    "h_2d3fee16c6ce59": {
+      "author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}

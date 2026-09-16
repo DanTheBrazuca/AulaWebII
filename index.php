@@ -21,7 +21,7 @@
   </style>
   <body>
     <h1>Web II</h1>
-    <p style="color: aliceblue">Cadastro:</p>
+    <p>Cadastro:</p>
     <form id="meuFormulario" method="POST">
       <label>Nome:</label>
       <input

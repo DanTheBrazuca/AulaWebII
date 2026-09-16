@@ -8,7 +8,7 @@
   </head>
   <style>
     body {
-      background-color: rgb(50, 107, 107);
+      background-color: white;
       font-family: sans-serif;
     }
     form {

@@ -1,0 +1,14 @@
+index.php
+  h_2d3fee16c6ce59 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0fbef75846c9c380a75f35f7807a05e9adacbfcc",
+  "prompts": {},
+  "humans": {
+    "h_2d3fee16c6ce59": {
+      "author": "DanTheBrazuca <dars120308@gmail.com>"
+    }
+  }
+}

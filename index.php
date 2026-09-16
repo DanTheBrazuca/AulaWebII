@@ -22,29 +22,22 @@
   <body>
     <h1>Web II</h1>
     <p style="color: aliceblue">Cadastro:</p>
-    <form id="meuFormulario">
+    <form id="meuFormulario" method="POST">
       <label>Nome:</label>
       <input
         type="text"
         id="nome"
         name="nome"
         placeholder="ex:Fulano da Silva"
+        required
       /><br /><br />
       <input type="submit" value="Cadastrar" />
     </form>
+    <?php 
+      if($_SERVER["REQUEST_METHOD"] === "POST") { 
+        $nome = $_POST["nome"];
+        echo "Nome cadastrado: " . htmlspecialchars($nome); 
+      } 
+    ?>
   </body>
-  <script>
-    const form = document.getElementById("meuFormulario");
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const nome = document.getElementById("nome").value;
-      if (nome.trim() === "") {
-        alert("Por favor, preencha o campo de nome.");
-        return;
-      } else {
-        alert("Cadastro realizado com sucesso!");
-      }
-      form.reset();
-    });
-  </script>
 </html>
